@@ -42,6 +42,9 @@
     text-align: center;
     background-color: #f36363;;
 }
+img {
+    border-radius: 10px;
+}
 h3 {
     margin-bottom: 10px;
     font-size: 32px;
@@ -50,6 +53,12 @@ h3 {
 p {
     font-size: 24px;
     color: #ffffff;
+}
+.goods-total {
+    background-color: #0264b4;
+    text-align: center;
+    color: #fff;
+    height: 20px;
 }
 .footer {
     height: 150px;
