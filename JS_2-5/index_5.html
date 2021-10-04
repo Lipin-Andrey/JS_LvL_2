@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>eShop</title>
+    <link rel="stylesheet" href="style_5.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="logo"><img class="img" src="img/85_32833.jpg" alt="logo"></div>
+            <div class="cart">
+                <form action="#" class="search-form">
+                    <input type="text" class="search-field" v-model="searchLine">
+                    <button class="btn-search" type="submit" @click="filter(searchLine)">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                </form>
+                <button class="btn-cart" type="button" @click="isVisibleCart=!isVisibleCart">Корзина</button>
+                <div class="cart-block" v-if="isVisibleCart">
+                    <template v-if="cartGoods.length">
+                        <div class="product-item" v-for="(prod, index) in cartGoods">
+                            <div class="desc">
+                                <h3>{{prod.product_name}}</h3>
+                                <p>{{prod.price}}</p>
+                                <button class="buy-btn" :data-id=prod.id_product
+                                    @click="removeFromCart(index)">Удалить</button>
+                            </div>
+                        </div>
+                    </template>
+                    <span v-else>Корзина пуста</span>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="Goods" v-if=filteredGoods.length>
+                <div class="product-item" v-for="prod in filteredGoods">
+                    <img src="img/no-image.jpg" :alt=product_name>
+                    <div class="desc">
+                        <h3>{{prod.product_name}}</h3>
+                        <p>{{prod.price}}</p>
+                        <button class="buy-btn" :data-id=prod.id_product
+                            @click.preventDefault="addToCart(prod)">Купить</button>
+                    </div>
+                </div>
+            </div>
+            <p v-else style="text-align:center">Нет даных</p>
+        </main>
+    </div>
+    <hr>
+    <footer class="footer">Все права защищены</footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="script_5.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js">
+    </script>
+
+</body>
+
+</html>
