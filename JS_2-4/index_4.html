@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style_4.css">
+    <title>JS2-4</title>
+
+</head>
+
+<body> <button id='button' onclick='openNext()'>'Одинарные'</button>
+    <br>
+    <div class='container'>
+        <span id='text'>
+            'Replace single quotes with double quotes',<br>
+            except for don't isn't doesn't didn't.<br>
+            'Replace single quotes with double quotes',<br>
+            except for don't isn't doesn't didn't.<br>
+            'Replace single quotes with double quotes',<br>
+            except for don't isn't doesn't didn't.
+        </span>
+        <br>
+        <button id='btn-text' onclick='changeText()'>"Двойные"</button>
+        <br>
+        <span id='text-box'></span>
+    </div>
+    <hr>
+    <div class="form">
+        <label id="name">
+            <input type="text" name="name" placeholder="Ваше имя">
+            <small class="error">Имя может содержать только буквы</small>
+        </label>
+        <label id="phone">
+            <input type="tel" name="phone" placeholder="+7(000)000-00-00">
+            <small class="error">+7(000)000-00-00</small>
+        </label>
+        <label id="email">
+            <input type="email" name="email" placeholder="E-mail">
+            <small class="error">mail@mail.ru</small>
+        </label>
+        <label id="message">
+            <textarea placeholder="Ваше сообщение" name="message"></textarea>
+            <small class="error">Текст сообщения</small>
+        </label>
+        <button class="button">Отправить</button>
+    </div>
+    <script src='script_4.js'></script>
+</body>
+
+</html>
