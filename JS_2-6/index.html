@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>eShop</title>
+    <link rel="stylesheet" href="css/style_6.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="logo"><img class="img" src="img/85_32833.jpg" alt="logo"></div>
+            <div class="cart">
+
+                <form action="#" class="search-form" @submit.prevent="filter">
+                    <searchform v-model="userSearch" id="search-template"></searchform>
+                    <button class="btn-search" type="submit">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                </form>
+
+                <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
+                <cart :cart-items="cartItems" :img="imgCart" :visibility="showCart" @remove="remove">
+                </cart>
+            </div>
+        </header>
+        <main>
+            <products :products="filtered" :img="imgCatalog" @add-product="addProduct">
+            </products>
+        </main>
+
+
+    </div>
+    <hr>
+    <footer class="footer">Все права защищены</footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="js/CartComp.js"></script>
+    <script src="js/ProdComp.js"></script>
+    <script src="js/search_comp.js"></script>
+    <script src="js/script_6.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+</body>
+
+</html>
